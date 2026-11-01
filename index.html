@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metal World — Physical Metals Arbitrage</title>
+  <meta name="description" content="Metal World is a principal trading house for ferrous and non-ferrous metals. We buy where metal is abundant and place it where it is worth more.">
+  <meta name="theme-color" content="#0d0d0b">
+  <meta property="og:title" content="Metal World — Physical Metals Arbitrage">
+  <meta property="og:description" content="Metal is the same everywhere. Its price isn't.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Metal World home">
+    <svg class="brand__mark" viewBox="0 0 112 56" aria-hidden="true">
+      <path d="M93.5 16.5 106 49.5H6.5L22.5 5.5h67L77.5 41 69 15l-9 21-10-21.5L40.5 40 30 14.5 21 41" fill="none" stroke="currentColor" stroke-width="5" stroke-miterlimit="10"/>
+    </svg>
+    <span class="brand__word">Metal<b>World</b></span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#thesis">Thesis</a>
+    <a href="#table">Metals</a>
+    <a href="#method">Method</a>
+    <a href="#network">Network</a>
+    <a href="#principles">Principles</a>
+  </nav>
+  <a href="#desk" class="nav__cta">Open a desk <span aria-hidden="true">↗</span></a>
+  <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <a href="#thesis">Thesis</a>
+  <a href="#table">Metals</a>
+  <a href="#method">Method</a>
+  <a href="#network">Network</a>
+  <a href="#principles">Principles</a>
+  <a href="#desk">Open a desk ↗</a>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero__meta mono">
+    <span>Ferrous / Non-ferrous</span>
+    <span>Principal trading</span>
+    <span class="hide-sm">Physically settled</span>
+    <span class="live"><i></i>Desks open</span>
+  </div>
+
+  <h1 class="hero__title">
+    <span class="line"><span>Metal is the same</span></span>
+    <span class="line"><span>everywhere.</span></span>
+    <span class="line"><span><em>Its price</em> isn’t.</span></span>
+  </h1>
+
+  <div class="hero__foot">
+    <p class="hero__lede">
+      Metal World buys ferrous and non-ferrous metal across five continents and moves it to where it is worth more. Disciplined arbitrage, physically delivered.
+    </p>
+    <div class="hero__ctas">
+      <a href="#desk" class="btn btn--solid">Offer us material</a>
+      <a href="#desk" class="btn btn--ghost">Source from us</a>
+    </div>
+  </div>
+
+  <figure class="spread" aria-label="Illustration of a price spread between an origin market and a destination market">
+    <canvas id="spreadCanvas"></canvas>
+    <figcaption class="spread__read mono">
+      <span><i class="dot dot--steel"></i>Origin <b id="rOrigin">—</b></span>
+      <span><i class="dot dot--copper"></i>Destination <b id="rDest">—</b></span>
+      <span class="delta">Δ <b id="rDelta">—</b></span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker mono" aria-label="Indicative corridor spreads">
+  <div class="ticker__track" id="ticker"></div>
+</div>
+
+<!-- ============ THESIS ============ -->
+<section class="thesis paper" id="thesis">
+  <div class="sec-head">
+    <span class="mono">§ 01</span>
+    <span class="mono">Thesis</span>
+  </div>
+
+  <p class="thesis__big reveal">
+    A tonne of copper in Rotterdam and a tonne of copper a few thousand miles east are
+    <em>chemically identical</em> and <em>commercially different</em>. Freight, duties, currency, timing and
+    local demand open a gap between them. <span class="u">We live inside that gap.</span>
+  </p>
+
+  <div class="thesis__cols">
+    <div class="reveal">
+      <h3>Buy where it’s abundant</h3>
+      <p>Yards, mills, demolition contractors and recyclers in mature economies generate more metal than their home markets can absorb. We are their outlet.</p>
+    </div>
+    <div class="reveal">
+      <h3>Place where it’s needed</h3>
+      <p>Fast-growing industrial bases melt, roll and cast faster than they can source domestically. We are their supply line.</p>
+    </div>
+    <div class="reveal">
+      <h3>Own the risk in between</h3>
+      <p>We trade as principal. Price, freight, quality and FX exposure sit on our book, not our counterparties’.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERIODIC TABLE ============ -->
+<section class="table" id="table">
+  <div class="sec-head">
+    <span class="mono">§ 02</span>
+    <span class="mono">The Table</span>
+  </div>
+  <div class="table__intro">
+    <h2 class="h2 reveal">Six elements.<br><em>Hundreds</em> of grades.</h2>
+    <p class="reveal">We trade to ISRI and buyer specifications, with the grade, recovery and contamination of every lot written down before it moves. Hover or tap an element.</p>
+  </div>
+
+  <div class="elements">
+    <article class="el reveal" tabindex="0">
+      <div class="el__top mono"><span>26</span><span>55.845</span></div>
+      <div class="el__sym">Fe</div>
+      <div class="el__name">Ferrous</div>
+      <ul class="el__grades mono">
+        <li>HMS 1&amp;2 (80:20)</li><li>Shredded 211</li><li>No.1 Busheling</li><li>Rails &amp; P&amp;S</li><li>Billets</li>
+      </ul>
+    </article>
+    <article class="el el--cu reveal" tabindex="0">
+      <div class="el__top mono"><span>29</span><span>63.546</span></div>
+      <div class="el__sym">Cu</div>
+      <div class="el__name">Copper</div>
+      <ul class="el__grades mono">
+        <li>Millberry / Barley</li><li>Berry / Candy</li><li>Birch / Cliff</li><li>Cathodes</li>
+      </ul>
+    </article>
+    <article class="el reveal" tabindex="0">
+      <div class="el__top mono"><span>13</span><span>26.982</span></div>
+      <div class="el__sym">Al</div>
+      <div class="el__name">Aluminium</div>
+      <ul class="el__grades mono">
+        <li>Taint / Tabor</li><li>Tense</li><li>UBC — Talap</li><li>Extrusion 6063</li><li>Ingots</li>
+      </ul>
+    </article>
+    <article class="el reveal" tabindex="0">
+      <div class="el__top mono"><span>30</span><span>65.38</span></div>
+      <div class="el__sym">Zn</div>
+      <div class="el__name">Zinc</div>
+      <ul class="el__grades mono">
+        <li>Old zinc — Scrub</li><li>Zinc dross</li><li>Die-cast — Saves</li><li>SHG ingots</li>
+      </ul>
+    </article>
+    <article class="el reveal" tabindex="0">
+      <div class="el__top mono"><span>82</span><span>207.2</span></div>
+      <div class="el__sym">Pb</div>
+      <div class="el__name">Lead</div>
+      <ul class="el__grades mono">
+        <li>Soft lead — Rakes</li><li>Drained batteries — Rains</li><li>Remelted ingots</li>
+      </ul>
+    </article>
+    <article class="el reveal" tabindex="0">
+      <div class="el__top mono"><span>28</span><span>58.693</span></div>
+      <div class="el__sym">Ni</div>
+      <div class="el__name">Stainless &amp; Nickel</div>
+      <ul class="el__grades mono">
+        <li>304 solids</li><li>316 solids</li><li>Turnings</li><li>High-temp alloys</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============ METHOD ============ -->
+<section class="method paper" id="method">
+  <div class="sec-head">
+    <span class="mono">§ 03</span>
+    <span class="mono">Method</span>
+  </div>
+  <h2 class="h2 reveal">Four moves between<br>a yard and a <em>furnace.</em></h2>
+
+  <ol class="steps">
+    <li class="step reveal">
+      <span class="step__n mono">01</span>
+      <h3>Source</h3>
+      <p>Direct relationships with yards, processors and generators. We quote firm, we lift on time, and we pay the way we said we would.</p>
+      <span class="step__out mono">→ Firm bid within 24h</span>
+    </li>
+    <li class="step reveal">
+      <span class="step__n mono">02</span>
+      <h3>Verify</h3>
+      <p>Every lot is inspected at loading. Photographs, weights, grade and radiation checks, with independent surveyors where the contract calls for it.</p>
+      <span class="step__out mono">→ Pre-shipment inspection</span>
+    </li>
+    <li class="step reveal">
+      <span class="step__n mono">03</span>
+      <h3>Move</h3>
+      <p>Containers and breakbulk, booked and tracked by our own logistics desk. Documentation is prepared to clear on arrival, not after it.</p>
+      <span class="step__out mono">→ Door to discharge port</span>
+    </li>
+    <li class="step reveal">
+      <span class="step__n mono">04</span>
+      <h3>Settle</h3>
+      <p>Letters of credit, CAD and structured terms through established banks. Clean paper, predictable cash cycles, no surprises.</p>
+      <span class="step__out mono">→ LC / CAD / TT</span>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ NETWORK ============ -->
+<section class="network" id="network">
+  <div class="sec-head">
+    <span class="mono">§ 04</span>
+    <span class="mono">Network</span>
+  </div>
+  <div class="network__head">
+    <h2 class="h2 reveal">Many origins.<br><em>One</em> discipline.</h2>
+    <p class="reveal">Our corridors run from the Americas, Europe, Africa, the Gulf and the Pacific towards the world’s fastest-growing melt shops. The chart below is drawn from the routes we work.</p>
+  </div>
+
+  <div class="chart reveal">
+    <svg id="routeMap" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Chart of trade routes from origin ports converging on a single discharge point"></svg>
+    <div class="chart__legend mono">
+      <span><i class="dot dot--steel"></i>Origin port</span>
+      <span><i class="dot dot--copper"></i>Discharge</span>
+      <span>Equirectangular · 15° graticule</span>
+    </div>
+  </div>
+
+  <ul class="regions mono">
+    <li class="reveal"><span>N. America</span><b>Houston · Newark · Savannah</b></li>
+    <li class="reveal"><span>Europe &amp; UK</span><b>Rotterdam · Hamburg · Felixstowe</b></li>
+    <li class="reveal"><span>Africa</span><b>Lagos · Durban · Mombasa</b></li>
+    <li class="reveal"><span>Gulf</span><b>Jebel Ali · Dammam</b></li>
+    <li class="reveal"><span>Asia-Pacific</span><b>Busan · Singapore · Melbourne</b></li>
+    <li class="reveal"><span>Latin America</span><b>Santos</b></li>
+  </ul>
+</section>
+
+<!-- ============ QUOTE BAND ============ -->
+<section class="band">
+  <div class="band__delta" aria-hidden="true">Δ</div>
+  <blockquote class="reveal">
+    Arbitrage isn’t speculation. It’s <em>patience, logistics</em> and knowing two markets at once.
+  </blockquote>
+</section>
+
+<!-- ============ PRINCIPLES ============ -->
+<section class="principles" id="principles">
+  <div class="sec-head">
+    <span class="mono">§ 05</span>
+    <span class="mono">Principles</span>
+  </div>
+  <ul class="rules">
+    <li class="rule reveal">
+      <span class="rule__n mono">I</span>
+      <h3>Principal, not broker.</h3>
+      <p>We take title. When we buy, the metal is ours, and so is the risk.</p>
+    </li>
+    <li class="rule reveal">
+      <span class="rule__n mono">II</span>
+      <h3>Every lot, written down.</h3>
+      <p>Grade, weight, photographs and inspection reports travel with the cargo.</p>
+    </li>
+    <li class="rule reveal">
+      <span class="rule__n mono">III</span>
+      <h3>Paper you can bank.</h3>
+      <p>Bank instruments and clean documentation on every contract we sign.</p>
+    </li>
+    <li class="rule reveal">
+      <span class="rule__n mono">IV</span>
+      <h3>Compliance before margin.</h3>
+      <p>KYC on every counterparty. Sanctions screening on every route. No exceptions for a better price.</p>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ DESK / CONTACT ============ -->
+<section class="desk paper" id="desk">
+  <div class="sec-head">
+    <span class="mono">§ 06</span>
+    <span class="mono">The Desk</span>
+  </div>
+  <h2 class="desk__title reveal">Have metal?<br><em>Need metal?</em></h2>
+
+  <div class="desk__grid">
+    <a class="ticket reveal" data-subject="Offer — material for sale" href="#">
+      <span class="ticket__kind mono">Sell to us</span>
+      <h3>Offer material</h3>
+      <p>Send grade, approximate tonnage, loading location and a few photographs. We come back with a firm bid.</p>
+      <span class="ticket__go mono">Write to the buying desk <span aria-hidden="true">→</span></span>
+    </a>
+    <a class="ticket reveal" data-subject="Enquiry — material required" href="#">
+      <span class="ticket__kind mono">Buy from us</span>
+      <h3>Source material</h3>
+      <p>Tell us the grade, specification, monthly volume and your discharge port. We quote CFR with shipment windows.</p>
+      <span class="ticket__go mono">Write to the sales desk <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+
+  <p class="desk__mail mono">Or simply <a class="mailto" href="#">desk@metalworld.example</a></p>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="clocks mono" id="clocks">
+    <div data-tz="America/Chicago"><span>Houston</span><b>--:--</b></div>
+    <div data-tz="Europe/London"><span>London</span><b>--:--</b></div>
+    <div data-tz="Europe/Amsterdam"><span>Rotterdam</span><b>--:--</b></div>
+    <div data-tz="Asia/Dubai"><span>Dubai</span><b>--:--</b></div>
+    <div data-tz="Asia/Karachi"><span>Karachi</span><b>--:--</b></div>
+    <div data-tz="Asia/Shanghai"><span>Shanghai</span><b>--:--</b></div>
+  </div>
+
+  <div class="foot__word" aria-hidden="true">METAL WORLD</div>
+
+  <div class="foot__base mono">
+    <span>© <span id="yr"></span> Metal World. All rights reserved.</span>
+    <span>Figures shown on this site are illustrative and do not constitute an offer.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
